@@ -7,8 +7,8 @@ interface SearchEngineTitleProps {
 function SearchEngineTitle({ count }: SearchEngineTitleProps) {
   return (
     <div className="space-x-3 flex items-baseline">
-      <h1 className="text-2xl ">Ma recherche</h1>
-      <span className="text-gray-500">{count} résultats</span>
+      <h1 className="text-2xl ">My research</h1>
+      <span className="text-gray-500">{count} results</span>
     </div>
   );
 }

@@ -6,15 +6,15 @@ export function SearchEngineMenu() {
   return (
     <div className="space-x-3 flex">
       <Button selected={true}>
-        <span>Tous</span>
+        <span>All</span>
       </Button>
       <Button>
         <Icon name="heart"></Icon>
-        <span>Favoris</span>
+        <span>Bookmarks</span>
       </Button>
       <Button>
         <Icon name="target"></Icon>
-        <span>Pré-selection</span>
+        <span>Positions</span>
       </Button>
       <Button transparent={true}>
         <Icon name="slider"></Icon>

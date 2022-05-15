@@ -11,10 +11,10 @@ const REAL_ESTATE_MOCK = [
       'city': 'Roubaix',
       '__typename': 'AddressCard',
     },
-    'coverImage': 'production/properties/626287a6f534fb009f0c34a4/cover/ebe05597-0c09-4e99-aec8-21eb998bbe10',
+    'coverImage': 'https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/72282092.jpg?k=1b4e25074b9f4186fe781d31054849167f0193595a3ef925f625770586d8b985&o=',
     'financialModel': {
       'grossReturnRate': 8.7,
-      'projectBudget': 107550.1,
+      'projectBudget': 107550,
       'loanMonthlyAmount': 313.3,
       'annualRentIncome': 6204,
       '__typename': 'RealEstateCardFinancialModel',
@@ -36,10 +36,10 @@ const REAL_ESTATE_MOCK = [
       'city': 'Bondy',
       '__typename': 'AddressCard',
     },
-    'coverImage': 'production/properties/625d413008d3a600a3756130/cover/e6367874-caa7-44c1-b9dd-f3180571f8a0',
+    'coverImage': 'https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/306933569.jpg?k=726d2bfed904896d6b36e9beca59fa7306d0bb01cb0b4544774a4278859e0a89&o=',
     'financialModel': {
       'grossReturnRate': 6.6,
-      'projectBudget': 148413.2,
+      'projectBudget': 148413,
       'loanMonthlyAmount': 384.3,
       'annualRentIncome': 7500,
       '__typename': 'RealEstateCardFinancialModel',
@@ -225,6 +225,7 @@ const widgetStateMapping = ({
 
 function SearchEngineScreen() {
   const map = (list: typeof REAL_ESTATE_MOCK) => list.map(r => ({
+    imageUrl: r.coverImage,
     title: `${r.propertyKind} - ${r.surface} m² - ${r.address?.city}`,
     loan: r.financialModel.loanMonthlyAmount,
     price: r.financialModel.projectBudget,

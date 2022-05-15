@@ -9,6 +9,7 @@ export type SearchEngineWidgetAction =
 export type SearchEngineWidgetState = 'OPEN' | 'BOOKMARKED' | 'POSITIONED_ON';
 
 export interface SearchEngineWidgetProps {
+  imageUrl: string;
   loan: number;
   price: number;
   rawYield: number;
@@ -39,11 +40,11 @@ const color = (state: SearchEngineWidgetState) => state === 'POSITIONED_ON'
 const label = (state: SearchEngineWidgetState) => {
   switch (state) {
     case 'OPEN':
-      return 'Intéressé';
+      return 'Interested';
     case 'BOOKMARKED':
-      return 'Me positionner';
+      return 'Positioned on';
     case 'POSITIONED_ON':
-      return 'Plus intéressé';
+      return 'No longer interested';
     default:
       throw new Error(`Cannot define label for state "${state}"`);
   }
@@ -52,6 +53,7 @@ const label = (state: SearchEngineWidgetState) => {
 const value = (v: number) => v.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
 function SearchEngineWidget({
+  imageUrl,
   loan,
   price,
   rawYield,
@@ -66,19 +68,19 @@ function SearchEngineWidget({
       <div
         className="h-36 bg-cover bg-no-repeat bg-center rounded-t-lg flex-none"
         style={{
-          backgroundImage: `url('https://ik.imagekit.io/masteos/tr:ar-3-2,w-335/production/properties/62755b330b9ee200b68df891/cover/fbf91160-3a80-4122-9079-c6afde8a11af')`,
+          backgroundImage: `url('${imageUrl ?? 'https://ik.imagekit.io/masteos/tr:ar-3-2,w-335/production/properties/62755b330b9ee200b68df891/cover/fbf91160-3a80-4122-9079-c6afde8a11af'}')`,
         }}></div>
       <div
         className="w-full h-full px-8 flex flex-col justify-evenly items-center">
         <span className="text-2xl text-center">{title}</span>
         <div className="w-full grid grid-cols-2">
-          <SearchEngineWidgetDetail title="Rendement brut"
+          <SearchEngineWidgetDetail title="Gross yield"
                                     value={`${value(rawYield)}%`}/>
-          <SearchEngineWidgetDetail title="Budget Total"
+          <SearchEngineWidgetDetail title="Total budget"
                                     value={`${value(price)} €`}/>
-          <SearchEngineWidgetDetail title="Loyer mensuel"
+          <SearchEngineWidgetDetail title="Monthly rent"
                                     value={`${value(rent)} €`}/>
-          <SearchEngineWidgetDetail title="Mensualités"
+          <SearchEngineWidgetDetail title="Monthly loan"
                                     value={`${value(loan)} €`}/>
         </div>
       </div>
