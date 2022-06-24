@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { Text } from '../../atoms/text/Text';
 import { Task, TaskProps } from '../../molecules/task/Task';
 
-interface TaskListProps {
+export interface TaskListProps {
   title: string,
   tasks: Omit<TaskProps, 'onStarClick'>[],
   onStarClick: () => void,
