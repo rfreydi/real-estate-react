@@ -1,11 +1,10 @@
 import { Image } from '../../../aphrodite/atoms/image/Image';
-import { TaskList, TaskListProps } from '../../../aphrodite/organisms/task-list/TaskList';
+import { TaskList, TaskTypeTaskListType } from '../../../aphrodite/organisms/task-list/TaskList';
 
-type ShoopingTemplateProps =
-  & TaskListProps
-  & {
-    onTaskClick: () => void,
-  };
+type ShoopingTemplateProps = {
+  tasks: TaskTypeTaskListType,
+  onTaskClick: () => void,
+};
 
 export const ShoopingTemplate = (
   {
