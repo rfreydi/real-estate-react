@@ -1,3 +1,5 @@
+import { cls } from '../../../utils/cls';
+
 interface ShadowContainerProps {
   children: React.ReactNode,
   className?: string,
@@ -6,13 +8,13 @@ interface ShadowContainerProps {
 export const ShadowContainer = (
   {
     children,
-    className,
+    className = '',
   }: ShadowContainerProps
 ) => {
-  const cls = [ className, 'shadow-sm' ].join(' ');
+  const style = cls([ className, 'shadow-sm' ]);
 
   return (
-    <div className={cls}>
+    <div className={style}>
       {children}
     </div>
   );

@@ -1,3 +1,5 @@
+import { cls } from '../../utils/cls';
+
 interface TextProps {
   textStyle?: 'base' | 'h1' | 'h2',
   children: React.ReactNode,
@@ -15,10 +17,10 @@ export const Text = (
     children,
   }: TextProps
 ) => {
-  const cls = [ txtStyle[textStyle], 'text-gray-900' ].join(' ');
+  const style = cls([ txtStyle[textStyle], 'text-gray-900' ]);
 
   return (
-    <span className={cls}>
+    <span className={style}>
       {children}
     </span>
   );

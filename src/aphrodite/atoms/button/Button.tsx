@@ -1,5 +1,7 @@
 import './button.css';
 
+import { cls } from '../../utils/cls';
+
 interface ButtonProps {
   primary?: boolean,
   type?: 'primary' | 'secondary' | 'transparent'
@@ -22,10 +24,10 @@ export const Button = (
     ...props
   }: ButtonProps
 ) => {
-  const cls = [ buttonTypeStyle[type], `storybook-button--${size}`].join(' ');
+  const style = cls([ buttonTypeStyle[type], `storybook-button--${size}`]);
 
   return (
-    <button type="button" className={cls} {...props}>
+    <button type="button" className={style} {...props}>
       {children}
     </button>
   );

@@ -1,7 +1,8 @@
 import { ShadowContainer } from '../../atoms/container/shadow-container/ShadowContainer';
 import { Text } from '../../atoms/text/Text';
 import { IconButton } from '../../molecules/icon-button/IconButton';
-import { Icon } from '../../atoms/icon/Icon';
+
+import { cls } from '../../utils/cls';
 
 export interface TaskProps {
   id: number,
@@ -13,16 +14,16 @@ export interface TaskProps {
 
 export const Task = (
   {
-    className,
+    className = '',
     label,
     selected,
     onStarClick,
   }: TaskProps
 ) => {
-  const cls = [ className, 'p-2 px-4 flex items-center bg-white' ].join(' ');
+  const style = cls([ className, 'p-2 px-4 flex items-center bg-white' ]);
 
   return (
-    <ShadowContainer className={cls}>
+    <ShadowContainer className={style}>
       <div className="flex-1">
         <Text>{label}</Text>
       </div>
