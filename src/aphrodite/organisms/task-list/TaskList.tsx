@@ -19,11 +19,8 @@ export const TaskList = (
   }: TaskListProps
 ) => {
   const list = useMemo(
-    () => {
-      return tasks.map(({ id, ...rest }) => {
-        return <Task key={id} id={id} {...rest} onStarClick={onStarClick} className="mb-2" />;
-      });
-    },
+    () =>
+      tasks.map(({ id, ...rest }) => <Task key={id} id={id} {...rest} onStarClick={onStarClick} className="mb-2" />),
     [ tasks, onStarClick ]
   );
 

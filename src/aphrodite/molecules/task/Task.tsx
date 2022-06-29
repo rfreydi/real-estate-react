@@ -1,6 +1,6 @@
 import { ShadowContainer } from '../../atoms/container/shadow-container/ShadowContainer';
 import { Text } from '../../atoms/text/Text';
-import { IconButton } from '../../molecules/icon-button/IconButton';
+import { Icon } from '../../atoms/icon/Icon';
 
 import { cls } from '../../utils/cls';
 
@@ -27,7 +27,7 @@ export const Task = (
       <div className="flex-1">
         <Text>{label}</Text>
       </div>
-      <IconButton onClick={onStarClick} isActive={selected} />
+      <Icon onIconClick={onStarClick} selected={selected} />
     </ShadowContainer>
   );
 };
