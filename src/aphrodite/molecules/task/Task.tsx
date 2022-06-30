@@ -14,6 +14,7 @@ export interface TaskProps {
 
 export const Task = (
   {
+    id,
     className = '',
     label,
     selected,
@@ -21,13 +22,13 @@ export const Task = (
   }: TaskProps
 ) => {
   const style = cls([ className, 'p-2 px-4 flex items-center bg-white' ]);
-
+  const taskClass = cls(['flex-1', ...(selected ? ['selected'] : [])])
   return (
     <ShadowContainer className={style}>
-      <div className="flex-1">
+      <div className={taskClass}>
         <Text>{label}</Text>
       </div>
-      <Icon onIconClick={onStarClick} selected={selected} />
+      <Icon testId={`task-${id}`} onIconClick={onStarClick} selected={selected} />
     </ShadowContainer>
   );
 };

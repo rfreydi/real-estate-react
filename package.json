@@ -14,6 +14,7 @@
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
     "react-scripts": "5.0.1",
+    "storybook-addon-state": "^1.0.3",
     "typescript": "^4.6.4",
     "web-vitals": "^2.1.4"
   },
@@ -59,6 +60,7 @@
     "@storybook/addon-interactions": "^6.4.22",
     "@storybook/addon-links": "^6.4.22",
     "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/jest": "^0.0.10",
     "@storybook/manager-webpack5": "^6.4.22",
     "@storybook/node-logger": "^6.4.22",
     "@storybook/preset-create-react-app": "^4.1.0",
